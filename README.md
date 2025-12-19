@@ -7,6 +7,8 @@ This repository contains the code for simulating the models presented in "Biophy
 
 **calculate_combined_degrader_fitness:** Function for calculating degrader model fitness to BRET, AS, iMRM, and HiBiT data.
 
+**estimate_degrader_model_parameters:** Script for estimating degrader model parameters by fitting to data.
+
 **fit_stabilizer_model_data:** Function for fitting stabilizer models to data.
 
 **fit_degrader_model_data:** Function for fitting degrader models to data.
