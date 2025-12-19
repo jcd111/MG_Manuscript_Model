@@ -9,8 +9,6 @@ This repository contains the code for simulating the models presented in "Biophy
 
 **estimate_degrader_model_parameters:** Script for estimating degrader model parameters by fitting to data.
 
-**fit_stabilizer_model_data:** Function for fitting stabilizer models to data.
-
 **fit_degrader_model_data:** Function for fitting degrader models to data.
 
 **initialize_degrader_combined_data:** Function for initializing MG degrader data in format required for fitting.  Data taken from Sperling et al. and Yamanaka et al.
