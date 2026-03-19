@@ -1,6 +1,6 @@
 %% Function for building Combined MG Degrader Model
 
-addpath(genpath('Modeling Functions'))
+
 addpath(genpath('Models/Combined Degrader Model'))
 
 % Loading parameter information

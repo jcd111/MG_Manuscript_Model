@@ -13,12 +13,12 @@ EGP = y(6);             % E:G:P ternary complex, nM
 
 % Initializing Parameters
 % Association/dissociation parameters
-k1 = p.k1;          % E + P -> EP
-KD1 = p.KD1;
-k2 = p.k2;          % EP + G -> EGP
-k3 = p.k3;          % E + G -> EG
+k3 = p.k3;          % E + P -> EP
 KD3 = p.KD3;
-k4 = p.k4;          % EG + P -> EGP
+k4 = p.k4;          % EP + G -> EGP
+k1 = p.k1;          % E + G -> EG
+KD1 = p.KD1;
+k2 = p.k2;          % EG + P -> EGP
 alpha = p.alpha;          % Cooperativity for enhanced binding interactions
 dK = p.dK;                % Scaling of binding affinities from in vitro to in vivo (AS/HiBiT Combo Only).
 
@@ -34,22 +34,22 @@ KD2 = KD3/alpha;
 dydt = zeros(size(y));
 
 % P
-dydt(1) = v_P - g1*P - k1*E*P + k1*KD1*EP - k4*EG*P + k4*KD4*EGP;
+dydt(1) = v_P - g1*P - k3*E*P + k3*KD1*EP - k2*EG*P + k2*KD2*EGP;
 
 % E
-dydt(2) = kcat*EGP - k1*E*P + k1*KD1*EP - k3*E*G + k3*KD3*EG;
+dydt(2) = kcat*EGP - k3*E*P + k3*KD3*EP - k1*E*G + k1*KD1*EG;
 
 % G
-dydt(3) = kcat*EGP - k3*E*G + k3*KD3*EG - k2*EP*G + k2*KD2*EGP;
+dydt(3) = kcat*EGP - k1*E*G + k1*KD3*EG - k4*EP*G + k4*KD4*EGP;
 
 % EP
-dydt(4) = k1*E*P - k1*KD1*EP + k2*KD2*EGP - k2*EP*G;
+dydt(4) = k3*E*P - k3*KD3*EP + k4*KD4*EGP - k4*EP*G;
 
 % EG
-dydt(5) = k3*E*G - k3*KD3*EG + k4*KD4*EGP - k4*EG*P;
+dydt(5) = k1*E*G - k1*KD1*EG + k2*KD2*EGP - k2*EG*P;
 
 % EGP
-dydt(6) = -kcat*EGP + k4*EG*P - k4*KD4*EGP + k2*EP*G - k2*KD2*EGP;
+dydt(6) = -kcat*EGP + k2*EG*P - k2*KD2*EGP + k4*EP*G - k4*KD4*EGP;
 
 
 end

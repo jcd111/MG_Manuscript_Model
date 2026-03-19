@@ -7,11 +7,11 @@ P_name = obj.parameters.P_name;
 G_name = obj.parameters.G_name;
 
 % Setting KD3 based on P name
-obj.parameters.KD1 = obj.parameters.(append("KD1_",P_name));
+obj.parameters.KD1 = obj.parameters.(append("KD3_",P_name));
 % Setting KD2 based on G name and P name
 obj.parameters.alpha = obj.parameters.(append("alpha_",G_name,"_",P_name));
 % Setting KD3 based on G name
-obj.parameters.KD3 = obj.parameters.(append("KD3_",G_name));
+obj.parameters.KD3 = obj.parameters.(append("KD1_",G_name));
 
 % Setting Et and Pt values based on experiment type
 if strcmp(obj.parameters.experiment_type,"MRM")
@@ -41,16 +41,15 @@ obj.parameters.kcat = obj.parameters.(append("kcat_",G_name,"_",P_name));
 
 
 % Determining initial amount of EP binding based on equilibrium.
-Pt = obj.parameters.Pt; Et = obj.parameters.Et; KD1 = obj.parameters.KD1; k1 = obj.parameters.k1;
-kcat_EP = obj.parameters.kcat_EP; g1 = obj.parameters.g1;
+Pt = obj.parameters.Pt; Et = obj.parameters.Et; KD3 = obj.parameters.KD3; k3 = obj.parameters.k3;
+g1 = obj.parameters.g1;
 
-Kd_eff = (kcat_EP + k1*KD1)/k1;
 
-P0 = 0.5*(Pt - Kd_eff - Et + sqrt((Pt - Kd_eff - Et).^2 + 4*Pt*Kd_eff));
+P0 = 0.5*(Pt - KD3 - Et + sqrt((Pt - KD3 - Et).^2 + 4*Pt*KD3));
 EP0 = Pt - P0;
 E0 = Et - EP0;
 
-obj.parameters.v_P = g1*P0 + k1*E0*P0 - k1*KD1*EP0;
+obj.parameters.v_P = g1*P0 + k3*E0*P0 - k3*KD3*EP0;
 % Setting initial conditions.
 obj.y0 = zeros(1,length(obj.species_names));
 obj.y0(strcmp(obj.species_names,"P")) = P0;

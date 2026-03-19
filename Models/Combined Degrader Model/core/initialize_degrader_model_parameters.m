@@ -9,98 +9,98 @@ parameters = struct();
 % Association rate constant for E + P <-> EP
 % Units: /nM/hr
 % Source: Schreiber et al., assumed to be identical for all species.
-parameters.k1 = 0.36;
-bounds.k1_bounds = [0.036 3.6];
+parameters.k3 = 0.36;
+bounds.k3_bounds = [0.036 3.6];
 
 % Dissociation constant of E + P <-> EP for IKZF1
 % Units: nM
 % Source: estimated
-parameters.KD1_IKZF1 = 1000;
-bounds.KD1_IKZF1_bounds = [1e2 1e7];
+parameters.KD3_IKZF1 = 1000;
+bounds.KD3_IKZF1_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for IKZF3
 % Units: nM
 % Source: estimated
-parameters.KD1_IKZF3 = 1000;
-bounds.KD1_IKZF3_bounds = [1e2 1e7];
+parameters.KD3_IKZF3 = 1000;
+bounds.KD3_IKZF3_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for GSPT1
 % Units: nM
 % Source: estimated
-parameters.KD1_GSPT1 = 1000;
-bounds.KD1_GSPT1_bounds = [1e2 1e7];
+parameters.KD3_GSPT1 = 1000;
+bounds.KD3_GSPT1_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for ZFP91
 % Units: nM
 % Source: estimated
-parameters.KD1_ZFP91 = 1000;
-bounds.KD1_ZFP91_bounds = [1e2 1e7];
+parameters.KD3_ZFP91 = 1000;
+bounds.KD3_ZFP91_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for RNF166
 % Units: nM
 % Source: estimated
-parameters.KD1_RNF166 = 1000;
-bounds.KD1_RNF166_bounds = [1e2 1e7];
+parameters.KD3_RNF166 = 1000;
+bounds.KD3_RNF166_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for ZNF692
 % Units: nM
 % Source: estimated
-parameters.KD1_ZNF692 = 1000;
-bounds.KD1_ZNF692_bounds = [1e2 1e7];
+parameters.KD3_ZNF692 = 1000;
+bounds.KD3_ZNF692_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for SALL4
 % Units: nM
 % Source: estimated
-parameters.KD1_SALL4 = 1000;
-bounds.KD1_SALL4_bounds = [1e2 1e7];
+parameters.KD3_SALL4 = 1000;
+bounds.KD3_SALL4_bounds = [1e2 1e7];
 
 % Dissociation constant of E + P <-> EP for PLZF
 % Units: nM
 % Source: estimated
-parameters.KD1_PLZF = 1000;
-bounds.KD1_PLZF_bounds = [1e2 1e7];
+parameters.KD3_PLZF = 1000;
+bounds.KD3_PLZF_bounds = [1e2 1e7];
 
 % Association Rate for EP + G <-> EP
 % Units: /nM/hr
 % Source: Schreiber et al., assumed to be identical for all species.
-parameters.k2 = 0.36;
-bounds.k2_bounds = [1e-2 1e1]*0.36;
+parameters.k4 = 0.36;
+bounds.k4_bounds = [1e-2 1e1]*0.36;
 
 % Association rate constant for E + G <-> EG for thalidomide
 % Units: /nM/hr
 % Source: Schreiber et al., assumed to be identical for all species.
-parameters.k3 = 0.36;
-bounds.k3_bounds = [1e-2 1e1]*0.36;
+parameters.k1 = 0.36;
+bounds.k1_bounds = [1e-2 1e1]*0.36;
 
 % Dissociation constant of E + G <-> EG for pomalidomide
 % Units: nM
 % Source: Akuffo et al., J Biol Chem, 2018.
-parameters.KD3_pom = 156.6;
-bounds.KD3_pom_bounds = [156.6 156.6];
+parameters.KD1_pom = 156.6;
+bounds.KD1_pom_bounds = [156.6 156.6];
 
 % Dissociation constant of E + G <-> EG for lenalidomide
 % Units: nM
 % Source: Akuffo et al., J Biol Chem, 2018.
-parameters.KD3_len = 177.8;
-bounds.KD3_len_bounds = [177.8 177.8];
+parameters.KD1_len = 177.8;
+bounds.KD1_len_bounds = [177.8 177.8];
 
 % Dissociation constant of E + G <-> EG for avadomide
 % Units: nM
 % Source: Akuffo et al., J Biol Chem, 2018.
-parameters.KD3_ava = 6600;
-bounds.KD3_ava_bounds = [6600 6600];
+parameters.KD1_ava = 6600;
+bounds.KD1_ava_bounds = [6600 6600];
 
 % Dissociation constant of E + G <-> EG for cc-885
 % Units: nM
 % Source: Akuffo et al., J Biol Chem, 2018.
-parameters.KD3_cc885 = 200;
-bounds.KD3_cc885_bounds = [200 200];
+parameters.KD1_cc885 = 200;
+bounds.KD1_cc885_bounds = [200 200];
 
 % Association rate for EG + P <-> EGP
 % Units: /nM/hr
 % Source: Schreiber et al., assumed to be identical for all species.
-parameters.k4 = 0.36;
-bounds.k4_bounds = [1e-2 1e1]*0.36;
+parameters.k2 = 0.36;
+bounds.k2_bounds = [1e-2 1e1]*0.36;
 
 % Cooperativity for IKZF1
 % Units: nM
